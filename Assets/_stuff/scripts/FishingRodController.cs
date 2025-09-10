@@ -5,8 +5,6 @@ public class FishingRodController : MonoBehaviour
     public BaseFishingRodSO fishingRodSettings;
 
     [Header("General")]
-    public float maxEnergy;
-    public float currentEnergy;
     public float lureSinkSpeedEmpty;
     public float lureSinkSpeedFull;
     public float lureMoveSpeedEmpty;
@@ -26,13 +24,24 @@ public class FishingRodController : MonoBehaviour
     }
     public LureState lureState;
 
+    [Header("Energy")]
+    public float maxEnergy;
+    public float currentEnergy;
+    public float energyDrain;
+    public float energyGain;
+    public EnergyBar energyBar;
+
+    [Header("Camera Follow")]
+    public Camera playerCamera;
+    public float followSpeed;
+
     [Header("References")]
     public Transform lureIdlePos;
     public Transform lure;
 
 
 
-    #region Helper methods
+    #region Fishing methods
 
     void SetFishingState(FishingState newState)
     {
@@ -41,38 +50,6 @@ public class FishingRodController : MonoBehaviour
     void SetLureState(LureState newState)
     {
         lureState = newState;
-    }
-
-
-
-    void MoveLure(float speed)
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            lure.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            lure.position += new Vector3(speed, 0, 0) * Time.deltaTime;
-        }
-    }
-
-
-
-    void ThrowLure()
-    {
-        lure.position = lureIdlePos.position;
-
-        SetFishingState(FishingState.Sinking);
-        SetLureState(LureState.Empty);
-    }
-    void SinkLure(float speed)
-    {
-        lure.position -= new Vector3(0, speed, 0) * Time.deltaTime;
-    }
-    void ReelLure(float speed)
-    {
-        lure.position += new Vector3(0, speed, 0) * Time.deltaTime;
     }
 
 
@@ -90,36 +67,12 @@ public class FishingRodController : MonoBehaviour
         {
             SetFishingState(FishingState.Reeling);
         }
-
-        switch (lureState)
-        {
-            case LureState.Empty:
-                MoveLure(lureMoveSpeedEmpty);
-                SinkLure(lureSinkSpeedEmpty);
-                break;
-            case LureState.Full:
-                MoveLure(lureMoveSpeedFull);
-                SinkLure(lureSinkSpeedFull);
-                break;
-        }
     }
     void UpdateState_Reeling()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (!Input.GetKey(KeyCode.W))
         {
             SetFishingState(FishingState.Sinking);
-        }
-
-        switch (lureState)
-        {
-            case LureState.Empty:
-                MoveLure(lureMoveSpeedEmpty);
-                ReelLure(fishingRodSettings.reelingSpeed);
-                break;
-            case LureState.Full:
-                MoveLure(lureMoveSpeedFull);
-                ReelLure(fishingRodSettings.reelingSpeed);
-                break;
         }
     }
 
@@ -129,17 +82,140 @@ public class FishingRodController : MonoBehaviour
         {
             case FishingState.Idle:
                 UpdateState_Idle();
-                break;
+                return;
             case FishingState.Sinking:
                 UpdateState_Sinking();
-                break;
+                return;
             case FishingState.Reeling:
                 UpdateState_Reeling();
-                break;
+                return;
         }
     }
 
+    void UpdateLure()
+    {
+        if (fishingState == FishingState.Idle) return;
+
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        float moveSpeedX = 0;
+        float moveSpeedY = 0;
+        float sinkSpeed = 0;
+
+        switch (lureState)
+        {
+            case LureState.Empty:
+                moveSpeedX = lureMoveSpeedEmpty * horizontalInput;
+                sinkSpeed = lureSinkSpeedEmpty;
+                break;
+            case LureState.Full:
+                moveSpeedX = lureMoveSpeedFull * horizontalInput;
+                sinkSpeed = lureSinkSpeedFull;
+                break;
+        }
+
+        switch (fishingState)
+        {
+            case FishingState.Sinking:
+                moveSpeedY = -sinkSpeed;
+                break;
+            case FishingState.Reeling:
+                moveSpeedY = fishingRodSettings.reelingSpeed;
+                break;
+        }
+
+        Vector2 movement = new Vector2();
+        movement.x = moveSpeedX;
+        movement.y = moveSpeedY;
+        
+        MoveLure(movement);
+    }
+
     #endregion
+
+
+
+    #region Energy methods
+
+    void UpdateEnergy()
+    {
+        if (fishingState == FishingState.Idle) return;
+
+        UpdateEnergyBarVisibility();
+        UpdateEnergyValue();
+        
+        energyBar.SetFillAsPercentage(currentEnergy / maxEnergy);
+    }
+    void UpdateEnergyBarVisibility()
+    {
+        switch (lureState)
+        {
+            case LureState.Empty:
+                energyBar.ToggleBar(false);
+                break;
+            case LureState.Full:
+                energyBar.ToggleBar(true);
+                break;
+        }
+    }
+    void UpdateEnergyValue()
+    {
+        float energyChange = 0;
+
+        switch (lureState)
+        {
+            case LureState.Empty:
+                energyChange += energyGain * Time.deltaTime;
+                break;
+            case LureState.Full:
+                switch (fishingState)
+                {
+                    case FishingState.Sinking:
+                        energyChange += energyGain * Time.deltaTime;
+                        break;
+                    case FishingState.Reeling:
+                        energyChange -= energyDrain * fishingRodSettings.energyDrainMultiplier * Time.deltaTime;
+                        break;
+                }
+                break;
+        }
+
+        currentEnergy = Mathf.Clamp(currentEnergy + energyChange, 0, maxEnergy);
+    }
+
+    #endregion
+
+
+
+    #region Lure methods
+
+    void MoveLure(Vector2 movement)
+    {
+        lure.position += new Vector3(movement.x, movement.y, 0) * Time.deltaTime;
+    }
+
+
+
+    void ThrowLure()
+    {
+        lure.position = lureIdlePos.position;
+
+        SetFishingState(FishingState.Sinking);
+        SetLureState(LureState.Empty);
+    }
+
+    #endregion
+
+
+
+    void CameraFollow()
+    {
+        Vector3 followPos = playerCamera.transform.position;
+
+        followPos.y = Mathf.Lerp(playerCamera.transform.position.y, lure.position.y, followSpeed * Time.deltaTime);
+
+        playerCamera.transform.position = followPos;
+    }
 
 
 
@@ -147,6 +223,8 @@ public class FishingRodController : MonoBehaviour
 
     void Update()
     {
+        CameraFollow();
+
         if (Input.GetKey(KeyCode.R))
         {
             SetLureState(LureState.Full);
@@ -156,6 +234,8 @@ public class FishingRodController : MonoBehaviour
             SetLureState(LureState.Empty);
         }
 
+        UpdateLure();
+        UpdateEnergy();
         UpdateFishing();
     }
     
