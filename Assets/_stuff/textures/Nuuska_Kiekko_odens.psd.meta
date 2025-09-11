@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8b7bc201f70953d4d96cec01f1bc6b09
+guid: 9aadbb6d185dc664691432eff715b2fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3205829600463783524
-    second: "N\xE4ytt\xF6kuva 2025-09-05 123833_0"
+      213: -6543804617072320696
+    second: Nuuska_Kiekko_odens_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "N\xE4ytt\xF6kuva 2025-09-05 123833_0"
+      name: Nuuska_Kiekko_odens_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 404
-        height: 218
+        x: 668
+        y: 488
+        width: 535
+        height: 535
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c997ceda6fa9283d0800000000000000
-      internalID: -3205829600463783524
+      spriteID: 84fd7df0f5cbf25a0800000000000000
+      internalID: -6543804617072320696
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "N\xE4ytt\xF6kuva 2025-09-05 123833_0": -3205829600463783524
+      Nuuska_Kiekko_odens_0: -6543804617072320696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
