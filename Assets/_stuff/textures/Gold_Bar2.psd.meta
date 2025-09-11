@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b9774175ab1f7044d8853cb698aa7da7
+guid: 163eed479a5c4da4c86bb206dbade5fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4875652802780679385
-    second: Gold_Bar_0
+      213: 2114445150162036043
+    second: Gold_Bar2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gold_Bar_0
+      name: Gold_Bar2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 250
-        height: 559
+        x: 772
+        y: 321
+        width: 347
+        height: 774
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9dc41ed446cc9a340800000000000000
-      internalID: 4875652802780679385
+      spriteID: b45a47849a4085d10800000000000000
+      internalID: 2114445150162036043
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gold_Bar_0: 4875652802780679385
+      Gold_Bar2_0: 2114445150162036043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
