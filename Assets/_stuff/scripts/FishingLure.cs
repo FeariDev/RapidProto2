@@ -12,6 +12,8 @@ public class FishingLure : MonoBehaviour
 
     public void CatchTreasureItem(ref TreasureItem item)
     {
+        if (currentItem != null) return;
+
         currentItem = item;
 
         currentItem.ToggleFreedom(false);
