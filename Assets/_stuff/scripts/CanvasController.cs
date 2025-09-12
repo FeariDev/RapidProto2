@@ -20,4 +20,7 @@ public class CanvasController : MonoBehaviour
         ShopPanel.SetActive(false);
         Press_EPanel.SetActive(true);
     }
+
+
+
 }
