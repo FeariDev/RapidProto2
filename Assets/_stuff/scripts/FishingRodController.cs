@@ -184,7 +184,7 @@ public class FishingRodController : MonoBehaviour
     void FinishFishing()
     {
         ResetLure();
-        //TODO: Instead of only destroying the item, add the value from it to the players coins of money or whatever
+        Player.Instance.ChangeMoney(lure.currentItem.value);
         lure.DestroyCurrentTreasureItem();
         currentEnergy = maxEnergy;
         UpdateEnergyBarVisibility();
