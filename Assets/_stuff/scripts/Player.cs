@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : Singleton<Player>
 {
-    public float money;
+    public float money { get; private set; }
 
 
 
