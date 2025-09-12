@@ -32,7 +32,7 @@ public class FishingLure : MonoBehaviour
     {
         if (currentItem == null) return;
 
-        Destroy(currentItem.gameObject);
+        currentItem.DestroyItem();
     }
 
 
