@@ -1,5 +1,6 @@
+using UnityEditorInternal;
 using UnityEngine;
-
+using TMPro;
 public class CanvasController : MonoBehaviour
 {
 
@@ -7,9 +8,15 @@ public class CanvasController : MonoBehaviour
     public GameObject Press_EPanel;
     public PlayerMovement PlayerMovement;
     public PlayerDirectionController PlayerDirectionController;
+    public TMP_Text MoneyText;
 
-
-
+    public void Update()
+    { 
+        if (Player.Instance != null)
+        {
+            MoneyText.text = Player.Instance.money.ToString() ;
+        }
+    }
 
     public void ShowShop()
     {

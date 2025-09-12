@@ -5,18 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
-    path: Assets/Scenes/Leyla.unity
-    guid: 60ae916bce030074c86a951be1af8e2a
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
-    guid: 04fefcafaef2209488fb6eb15bae8bb2
+    guid: 7fe311f9cbb08f348b62c35e217a97a7
   - enabled: 1
-    path: Assets/Scenes/GAmeScene.unity
-    guid: fe846ff570c26b844af18be40fa5ec9f
+    path: Assets/Scenes/Pool_Area.unity
+    guid: ac885c3a9ff082f4591696ca01fe3692
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
