@@ -2044,6 +2044,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7712120313465704992, guid: 00bbb52458b3c83439f30734b92638ca, type: 3}
   m_PrefabInstance: {fileID: 6123470616220202580}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1682064971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682064969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ac040165929a42b6ce908ec7ce166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItems:
+  - itemName: Small Energy Drink
+    price: 5
+    buyButton: {fileID: 1172461037}
+  - itemName: Medium Energy Drink
+    price: 10
+    buyButton: {fileID: 273064606}
+  - itemName: Large Energy Drink
+    price: 20
+    buyButton: {fileID: 408405605}
+  - itemName: Automatic Fishing Rod
+    price: 15
+    buyButton: {fileID: 1579954685}
+  - itemName: Strong Fishing Rod
+    price: 12
+    buyButton: {fileID: 463814483}
+  - itemName: One Time Use Net
+    price: 10
+    buyButton: {fileID: 1854340793}
 --- !u!1 &1721826300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8011064335298959132, guid: bb686952114229e4989312ce8f036d11, type: 3}
@@ -2615,7 +2646,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7712120313465704992, guid: 00bbb52458b3c83439f30734b92638ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1579954684}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5046392122328132320, guid: 00bbb52458b3c83439f30734b92638ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1682064971}
   m_SourcePrefab: {fileID: 100100000, guid: 00bbb52458b3c83439f30734b92638ca, type: 3}
 --- !u!1001 &6195901974486643392
 PrefabInstance:
