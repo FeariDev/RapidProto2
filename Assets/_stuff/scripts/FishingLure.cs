@@ -16,13 +16,13 @@ public class FishingLure : MonoBehaviour
 
         currentItem = item;
 
-        currentItem.ToggleFreedom(false);
+        currentItem.CatchItem();
 
         OnItemCatch?.Invoke(currentItem);
     }
     public void FreeCurrentTreasureItem()
     {
-        currentItem.ToggleFreedom(true);
+        currentItem.FreeItem();
 
         currentItem = null;
 
@@ -32,7 +32,7 @@ public class FishingLure : MonoBehaviour
     {
         if (currentItem == null) return;
 
-        Destroy(currentItem.gameObject);
+        currentItem.DestroyItem();
     }
 
 

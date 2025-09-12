@@ -20,17 +20,33 @@ public class TreasureItem : MonoBehaviour
         isCaught = !toggle;
     }
 
+    public void FreeItem()
+    {
+        isCaught = false;
+    }
+    public void CatchItem()
+    {
+        isCaught = true;
+    }
 
+    public void DestroyItem()
+    {
+        Destroy(gameObject);
+    }
+
+
+
+    #region Unity lifecycle
 
     void Start()
     {
         if (transform.position.x > 0)
         {
-            moveDir = 1;
+            moveDir = -1;
         }
         else if (transform.position.x < 0)
         {
-            moveDir = -1;
+            moveDir = 1;
         }
     }
 
@@ -40,4 +56,6 @@ public class TreasureItem : MonoBehaviour
 
         transform.position += new Vector3(moveSpeed * moveDir, 0, 0) * Time.deltaTime;
     }
+
+    #endregion
 }
