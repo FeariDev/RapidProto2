@@ -20,6 +20,15 @@ public class TreasureItem : MonoBehaviour
         isCaught = !toggle;
     }
 
+    public void FreeItem()
+    {
+        isCaught = false;
+    }
+    public void CatchItem()
+    {
+        isCaught = true;
+    }
+
     public void DestroyItem()
     {
         Destroy(gameObject);
