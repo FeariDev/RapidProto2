@@ -5,6 +5,8 @@ public class CanvasController : MonoBehaviour
 
     public GameObject ShopPanel;
     public GameObject Press_EPanel;
+    public PlayerMovement PlayerMovement;
+    public PlayerDirectionController PlayerDirectionController;
 
 
 
@@ -19,6 +21,7 @@ public class CanvasController : MonoBehaviour
     {
         ShopPanel.SetActive(false);
         Press_EPanel.SetActive(true);
+        Player.Instance.ToggleMoevement(true);
     }
 
 

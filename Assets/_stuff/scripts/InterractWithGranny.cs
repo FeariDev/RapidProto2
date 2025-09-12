@@ -3,6 +3,8 @@ using UnityEngine;
 public class InterractWithGranny : MonoBehaviour
 {
     public CanvasController CanvasController;
+    public PlayerMovement PlayerMovement;
+    public PlayerDirectionController PlayerDirectionController;
     private bool isInsideTrigger = false;
 
     private void Update()
@@ -10,6 +12,8 @@ public class InterractWithGranny : MonoBehaviour
         if (isInsideTrigger && Input.GetKeyDown(KeyCode.E))
         {
             CanvasController.ShowShop();
+
+            Player.Instance.ToggleMoevement(false);
         }
     }
 
