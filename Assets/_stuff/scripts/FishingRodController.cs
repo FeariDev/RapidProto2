@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FishingRodController : MonoBehaviour
+public class FishingRodController : Singleton<FishingRodController>
 {
     public BaseFishingRodSO fishingRodSettings;
 

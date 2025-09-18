@@ -358,6 +358,8 @@ MonoBehaviour:
   spawnArea1Y: {x: -8, y: -2}
   spawnArea2X: {x: 9, y: 12}
   spawnArea2Y: {x: -8, y: -2}
+  spawnOffsetY: 0
+  spawnClampY: {x: -30, y: -2}
 --- !u!1 &201462927
 GameObject:
   m_ObjectHideFlags: 0

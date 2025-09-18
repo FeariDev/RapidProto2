@@ -15,6 +15,8 @@ public class TreasureSpawner : MonoBehaviour
     public Vector2 spawnArea1Y;
     public Vector2 spawnArea2X;
     public Vector2 spawnArea2Y;
+    public float spawnOffsetY;
+    public Vector2 spawnClampY;
 
 
 
@@ -59,6 +61,9 @@ public class TreasureSpawner : MonoBehaviour
 
         Vector2 spawnPos = spawnSide < 1 ? spawnPos1 : spawnPos2;
 
+        spawnPos.y += spawnOffsetY;
+        spawnPos.y = Mathf.Clamp(spawnPos.y, spawnClampY.x, spawnClampY.y);
+
         return spawnPos;
     }
 
@@ -68,6 +73,7 @@ public class TreasureSpawner : MonoBehaviour
 
     void Update()
     {
+        spawnOffsetY = FishingRodController.Instance.lureObj.position.y;
         spawnLoopTime += Time.deltaTime;
 
         if (spawnLoopTime >= spawnLoopInterval)
