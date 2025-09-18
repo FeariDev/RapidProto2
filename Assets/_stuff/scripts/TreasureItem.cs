@@ -12,6 +12,7 @@ public class TreasureItem : MonoBehaviour
     public bool isCaught;
     public float moveSpeed;
     public int moveDir;
+    public float spawnChance;
 
 
 
@@ -55,6 +56,14 @@ public class TreasureItem : MonoBehaviour
         if (isCaught) return;
 
         transform.position += new Vector3(moveSpeed * moveDir, 0, 0) * Time.deltaTime;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("TreasureDestroyer"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     #endregion

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +8,16 @@ public class Player : Singleton<Player>
     public PlayerDirectionController playerDirectionController;
     public float money { get; private set; }
 
+    [Header("UI")]
+    public TMP_Text moneyText;
+
 
 
     public void ChangeMoney(float value)
     {
         money += value;
+
+        moneyText.text = money.ToString();
     }
    
 
