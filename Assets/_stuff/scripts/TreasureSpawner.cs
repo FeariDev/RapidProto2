@@ -7,8 +7,10 @@ public class TreasureSpawner : MonoBehaviour
     [Header("Spawn Settings")]
     public float spawnLoopInterval = 2f;
     public float spawnLoopTime;
-    public Vector2 spawnAreaX;
-    public Vector2 spawnAreaY;
+    public Vector2 spawnArea1X;
+    public Vector2 spawnArea1Y;
+    public Vector2 spawnArea2X;
+    public Vector2 spawnArea2Y;
 
 
 
@@ -19,10 +21,17 @@ public class TreasureSpawner : MonoBehaviour
 
     Vector2 GetSpawnLocation()
     {
-        float x = Random.Range(spawnAreaX.x, spawnAreaX.y);
-        float y = Random.Range(spawnAreaY.x, spawnAreaY.y);
+        float x1 = Random.Range(spawnArea1X.x, spawnArea1X.y);
+        float y1 = Random.Range(spawnArea1Y.x, spawnArea1Y.y);
+        float x2 = Random.Range(spawnArea2X.x, spawnArea2X.y);
+        float y2 = Random.Range(spawnArea2Y.x, spawnArea2Y.y);
 
-        Vector2 spawnPos = new Vector2(x, y);
+        Vector2 spawnPos1 = new Vector2(x1, y1);
+        Vector2 spawnPos2 = new Vector2(x2, y2);
+
+        int spawnSide = Random.Range(0, 2);
+
+        Vector2 spawnPos = spawnSide < 1 ? spawnPos1 : spawnPos2;
 
         return spawnPos;
     }

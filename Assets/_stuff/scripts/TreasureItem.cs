@@ -57,5 +57,13 @@ public class TreasureItem : MonoBehaviour
         transform.position += new Vector3(moveSpeed * moveDir, 0, 0) * Time.deltaTime;
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("TreasureDestroyer"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     #endregion
 }
