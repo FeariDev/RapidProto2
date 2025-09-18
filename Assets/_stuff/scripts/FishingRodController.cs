@@ -37,6 +37,7 @@ public class FishingRodController : Singleton<FishingRodController>
     public float followSpeed;
 
     [Header("References")]
+    public SpriteRenderer spriteRenderer;
     public Transform lureIdlePos;
     public Transform lureObj;
 
@@ -266,10 +267,18 @@ public class FishingRodController : Singleton<FishingRodController>
 
 
 
+    void UpdateFishingRodSprite()
+    {
+        spriteRenderer.sprite = fishingRodSettings.fishingRodSprite;
+    }
+
+
+
     #region Unity lifecycle
 
     void Update()
     {
+        UpdateFishingRodSprite();
         CameraFollow();
 
         if (Input.GetKey(KeyCode.R))
