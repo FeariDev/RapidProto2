@@ -1,8 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TreasureSpawner : MonoBehaviour
 {
     public TreasureItem itemToSpawn;
+
+    public List<TreasureItem> itemList = new List<TreasureItem>();
+    public List<TreasureItem> itemsToSpawn = new List<TreasureItem>();
 
     [Header("Spawn Settings")]
     public float spawnLoopInterval = 2f;
@@ -13,6 +17,28 @@ public class TreasureSpawner : MonoBehaviour
     public Vector2 spawnArea2Y;
 
 
+
+    void SelectItemsToSpawn()
+    {
+        itemsToSpawn.Clear();
+
+        foreach (TreasureItem item in itemList)
+        {
+            int spawnChance = Random.Range(0, 101);
+
+            if (spawnChance > item.spawnChance) continue;
+
+            itemsToSpawn.Add(item);
+        }
+    }
+
+    void SpawnItems()
+    {
+        foreach (TreasureItem item in itemsToSpawn)
+        {
+            SpawnItem(item, GetSpawnLocation());
+        }
+    }
 
     void SpawnItem(TreasureItem item, Vector2 position)
     {
@@ -46,7 +72,8 @@ public class TreasureSpawner : MonoBehaviour
 
         if (spawnLoopTime >= spawnLoopInterval)
         {
-            SpawnItem(itemToSpawn, GetSpawnLocation());
+            SelectItemsToSpawn();
+            SpawnItems();
 
             spawnLoopTime = 0;
         }

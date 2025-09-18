@@ -12,6 +12,7 @@ public class TreasureItem : MonoBehaviour
     public bool isCaught;
     public float moveSpeed;
     public int moveDir;
+    public float spawnChance;
 
 
 
