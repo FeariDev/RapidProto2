@@ -108,6 +108,8 @@ public class FishingRodController : MonoBehaviour
     {
         if (fishingState == FishingState.Idle) return;
 
+        if (currentEnergy <= 0 && lureState == LureState.Full) lure.FreeCurrentTreasureItem();
+
         UpdateEnergyBarVisibility();
         UpdateEnergyValue();
         
@@ -184,7 +186,7 @@ public class FishingRodController : MonoBehaviour
     void FinishFishing()
     {
         ResetLure();
-        Player.Instance.ChangeMoney(lure.currentItem.value);
+        if(lure.currentItem != null) Player.Instance.ChangeMoney(lure.currentItem.value);
         lure.DestroyCurrentTreasureItem();
         currentEnergy = maxEnergy;
         UpdateEnergyBarVisibility();
@@ -194,6 +196,13 @@ public class FishingRodController : MonoBehaviour
 
     void CatchTreasureOnLure(TreasureItem item)
     {
+        if (item.type == TreasureItem.Type.Bad)
+        {
+            Player.Instance.ChangeMoney(lure.currentItem.value);
+            lure.DestroyCurrentTreasureItem();
+            return;
+        }
+
         SetLureState(LureState.Full);
     }
     void FreeTreasureOnLure()
