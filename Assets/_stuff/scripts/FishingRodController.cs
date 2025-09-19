@@ -41,6 +41,9 @@ public class FishingRodController : Singleton<FishingRodController>
     public Transform lureIdlePos;
     public Transform lureObj;
 
+    public float reelingTapEase = 0.3f;
+    public float timeSinceReeled;
+
 
 
     #region Fishing methods
@@ -65,16 +68,39 @@ public class FishingRodController : Singleton<FishingRodController>
     }
     void UpdateState_Sinking()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (fishingRodSettings.automaticReel)
         {
-            SetFishingState(FishingState.Reeling);
+            if (Input.GetKey(KeyCode.W))
+            {
+                SetFishingState(FishingState.Reeling);
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                timeSinceReeled = 0;
+                SetFishingState(FishingState.Reeling);
+            }
         }
     }
     void UpdateState_Reeling()
     {
-        if (!Input.GetKey(KeyCode.W))
+        if (fishingRodSettings.automaticReel)
         {
-            SetFishingState(FishingState.Sinking);
+            if (!Input.GetKey(KeyCode.W))
+            {
+                SetFishingState(FishingState.Sinking);
+            }
+        }
+        else
+        {
+            timeSinceReeled += Time.deltaTime;
+
+            if (timeSinceReeled >= reelingTapEase)
+            {
+                SetFishingState(FishingState.Sinking);
+            }
         }
 
         if (lureObj.position.y >= lureIdlePos.position.y)
