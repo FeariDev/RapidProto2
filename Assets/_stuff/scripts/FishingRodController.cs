@@ -40,6 +40,9 @@ public class FishingRodController : Singleton<FishingRodController>
     public SpriteRenderer spriteRenderer;
     public Transform lureIdlePos;
     public Transform lureObj;
+    public LineRenderer lineRenderer;
+    public Transform lineStartPos;
+    public Transform lineEndPos;
 
     public float reelingTapEase = 0.3f;
     public float timeSinceReeled;
@@ -216,6 +219,7 @@ public class FishingRodController : Singleton<FishingRodController>
         if(lure.currentItem != null) Player.Instance.ChangeMoney(lure.currentItem.value);
         lure.DestroyCurrentTreasureItem();
         currentEnergy = maxEnergy;
+        lineRenderer.SetPosition(1, lineEndPos.position);
         UpdateEnergyBarVisibility();
 
         SetFishingState(FishingState.Idle);
@@ -242,6 +246,8 @@ public class FishingRodController : Singleton<FishingRodController>
     void UpdateLure()
     {
         if (fishingState == FishingState.Idle) return;
+
+        lineRenderer.SetPosition(1, lineEndPos.position);
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
 
@@ -301,6 +307,12 @@ public class FishingRodController : Singleton<FishingRodController>
 
 
     #region Unity lifecycle
+
+    void Start()
+    {
+        lineRenderer.SetPosition(0, lineStartPos.position);
+        lineRenderer.SetPosition(1, lineEndPos.position);
+    }
 
     void Update()
     {
