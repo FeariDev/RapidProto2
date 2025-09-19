@@ -464,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4595320664373335468, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4684278870246213988, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_text
@@ -894,6 +894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1721826303}
   playerDirectionController: {fileID: 1721826301}
+  playerInventory: {fileID: 0}
   moneyText: {fileID: 0}
 --- !u!114 &1855435878 stripped
 MonoBehaviour:
