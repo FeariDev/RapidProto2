@@ -21,13 +21,13 @@ public class CanvasController : MonoBehaviour
     public void ShowShop()
     {
         ShopPanel.SetActive(true);
-        Press_EPanel.SetActive(false);
+        //Press_EPanel.SetActive(false);
     }
 
     public void HideShop()
     {
         ShopPanel.SetActive(false);
-        Press_EPanel.SetActive(true);
+        //Press_EPanel.SetActive(true);
         Player.Instance.ToggleMoevement(true);
     }
 
