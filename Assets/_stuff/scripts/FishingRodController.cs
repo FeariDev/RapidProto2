@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FishingRodController : MonoBehaviour
+public class FishingRodController : Singleton<FishingRodController>
 {
     public BaseFishingRodSO fishingRodSettings;
 
@@ -37,6 +37,7 @@ public class FishingRodController : MonoBehaviour
     public float followSpeed;
 
     [Header("References")]
+    public SpriteRenderer spriteRenderer;
     public Transform lureIdlePos;
     public Transform lureObj;
 
@@ -107,6 +108,8 @@ public class FishingRodController : MonoBehaviour
     void UpdateEnergy()
     {
         if (fishingState == FishingState.Idle) return;
+
+        if (currentEnergy <= 0 && lureState == LureState.Full) lure.FreeCurrentTreasureItem();
 
         UpdateEnergyBarVisibility();
         UpdateEnergyValue();
@@ -184,7 +187,7 @@ public class FishingRodController : MonoBehaviour
     void FinishFishing()
     {
         ResetLure();
-        Player.Instance.ChangeMoney(lure.currentItem.value);
+        if(lure.currentItem != null) Player.Instance.ChangeMoney(lure.currentItem.value);
         lure.DestroyCurrentTreasureItem();
         currentEnergy = maxEnergy;
         UpdateEnergyBarVisibility();
@@ -194,6 +197,13 @@ public class FishingRodController : MonoBehaviour
 
     void CatchTreasureOnLure(TreasureItem item)
     {
+        if (item.type == TreasureItem.Type.Bad)
+        {
+            Player.Instance.ChangeMoney(lure.currentItem.value);
+            lure.DestroyCurrentTreasureItem();
+            return;
+        }
+
         SetLureState(LureState.Full);
     }
     void FreeTreasureOnLure()
@@ -257,10 +267,18 @@ public class FishingRodController : MonoBehaviour
 
 
 
+    void UpdateFishingRodSprite()
+    {
+        spriteRenderer.sprite = fishingRodSettings.fishingRodSprite;
+    }
+
+
+
     #region Unity lifecycle
 
     void Update()
     {
+        UpdateFishingRodSprite();
         CameraFollow();
 
         if (Input.GetKey(KeyCode.R))

@@ -106,6 +106,7 @@ MonoBehaviour:
   isCaught: 0
   moveSpeed: 1
   moveDir: 0
+  spawnChance: 50
 --- !u!58 &3066354670303676958
 CircleCollider2D:
   m_ObjectHideFlags: 0

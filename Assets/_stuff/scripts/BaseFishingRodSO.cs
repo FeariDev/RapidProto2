@@ -6,4 +6,5 @@ public class BaseFishingRodSO : ScriptableObject
     public float reelingSpeed = 0.8f;
     public float energyDrainMultiplier = 1;
     public bool automaticReel;
+    public Sprite fishingRodSprite;
 }

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe696db8a57d0dc4ea97a3fb3bcb2d91, type: 3}
   m_Name: Base_Fishing_Rod_Settings
   m_EditorClassIdentifier: 
+  reelingSpeed: 0.8
   energyDrainMultiplier: 1
   automaticReel: 0
+  fishingRodSprite: {fileID: -2995872960906320144, guid: db5bfd4f7d093994187c60f0f014fd14, type: 3}
