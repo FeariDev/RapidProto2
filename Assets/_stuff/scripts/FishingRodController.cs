@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class FishingRodController : Singleton<FishingRodController>
@@ -31,6 +32,13 @@ public class FishingRodController : Singleton<FishingRodController>
     public float energyDrain;
     public float energyGain;
     public EnergyBar energyBar;
+
+    [Header("Bounds")]
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
+    public bool drawGizmo = true;
 
     [Header("Camera Follow")]
     public Camera playerCamera;
@@ -190,7 +198,11 @@ public class FishingRodController : Singleton<FishingRodController>
 
     void MoveLure(Vector2 movement)
     {
-        lureObj.position += new Vector3(movement.x, movement.y, 0) * Time.deltaTime;
+        Vector3 newPos = lureObj.position += new Vector3(movement.x, movement.y, 0) * Time.deltaTime;
+
+        newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
+        newPos.y = Mathf.Clamp(newPos.y, minY, maxY);
+        lureObj.position = newPos;
     }
 
     void ThrowLure()
@@ -332,6 +344,23 @@ public class FishingRodController : Singleton<FishingRodController>
         UpdateEnergy();
         UpdateFishing();
     }
-    
+
     #endregion
+
+    private void OnDrawGizmos()
+    {
+        if(drawGizmo)
+        {
+            Vector3 tl = new Vector3(minX, maxY, 0);
+            Vector3 tr = new Vector3(maxX, maxY, 0);
+            Vector3 bl = new Vector3(minX, minY, 0);
+            Vector3 br = new Vector3(maxX, minY, 0);
+
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(tl, tr);
+            Gizmos.DrawLine(tr, br);
+            Gizmos.DrawLine(br, bl);
+            Gizmos.DrawLine(bl, tl);
+        }
+    }
 }
