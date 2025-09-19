@@ -6,6 +6,7 @@ public class Player : Singleton<Player>
 {
     public PlayerMovement playerMovement;
     public PlayerDirectionController playerDirectionController;
+    public PlayerInventory playerInventory;
     public float money { get; private set; }
 
     [Header("UI")]
