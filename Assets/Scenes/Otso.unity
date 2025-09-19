@@ -398,9 +398,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1969993620}
     m_Modifications:
+    - target: {fileID: 1473936185606429226, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4467308499977031453, guid: be034f56f0ee68349b06ea8993821c7c, type: 3}
+    - target: {fileID: 1473936185606429226, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473936185606429226, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473936185606429226, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783341016623566548, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783341016623566548, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7547182043878506601, guid: 4026311249897db48a5411856eff5457, type: 3}
     - target: {fileID: 2098097365465951324, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_text
       value: Medium Energy Drink
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166639816288165527, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166639816288165527, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166639816288165527, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000026703
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166639816288165527, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2184794502035119773, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_text
@@ -410,13 +450,21 @@ PrefabInstance:
       propertyPath: m_text
       value: Automatic Rod
       objectReference: {fileID: 0}
+    - target: {fileID: 3784250317059021863, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784250317059021863, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2995872960906320144, guid: db5bfd4f7d093994187c60f0f014fd14, type: 3}
     - target: {fileID: 4595320664373335468, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
     - target: {fileID: 4595320664373335468, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684278870246213988, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_text
@@ -454,9 +502,45 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6775170581299925996, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775170581299925996, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775170581299925996, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
     - target: {fileID: 7075294131660165006, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_text
       value: Fishing Net
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710472634555756286, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710472634555756286, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4467308499977031453, guid: be034f56f0ee68349b06ea8993821c7c, type: 3}
+    - target: {fileID: 8483334259176147980, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 105.2332
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483334259176147980, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 24.4856
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483334259176147980, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.6166
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483334259176147980, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -47.7572
       objectReference: {fileID: 0}
     - target: {fileID: 8785829979337213307, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_text
@@ -524,11 +608,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8888459908764070547, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.265
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8888459908764070547, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0000076294
+      value: -7.1
       objectReference: {fileID: 0}
     - target: {fileID: 8888459908764070547, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -810,6 +894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1721826303}
   playerDirectionController: {fileID: 1721826301}
+  moneyText: {fileID: 0}
 --- !u!114 &1855435878 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6712667745763792542, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
