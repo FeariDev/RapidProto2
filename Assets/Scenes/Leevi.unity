@@ -1325,6 +1325,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 811967014}
   lureIdlePos: {fileID: 1612433148}
   lureObj: {fileID: 153064301}
+  reelingTapEase: 0.3
+  timeSinceReeled: 0
 --- !u!4 &1612433148
 Transform:
   m_ObjectHideFlags: 0
@@ -1356,6 +1358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 0}
   playerDirectionController: {fileID: 0}
+  playerInventory: {fileID: 0}
   moneyText: {fileID: 410468428}
 --- !u!1 &1627837626
 GameObject:
