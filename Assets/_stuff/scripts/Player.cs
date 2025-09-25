@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : Singleton<Player>
@@ -7,7 +8,7 @@ public class Player : Singleton<Player>
     public PlayerMovement playerMovement;
     public PlayerDirectionController playerDirectionController;
     public PlayerInventory playerInventory;
-    public float money { get; private set; }
+    public static float money { get; private set; }
 
     [Header("UI")]
     public TMP_Text moneyText;
@@ -17,10 +18,8 @@ public class Player : Singleton<Player>
     public void ChangeMoney(float value)
     {
         money += value;
-
-        moneyText.text = money.ToString();
     }
-   
+
 
     public void ToggleMoevement(bool enabled)
     {
@@ -31,5 +30,41 @@ public class Player : Singleton<Player>
     void AddMoney()
     {
         ChangeMoney(10);
+    }
+    [Button("Load Pool")]
+    void LoadPoolScene()
+    {
+        SceneManager.LoadScene("Pool_Area");
+    }
+    [Button("Load Entry")]
+    void LoadEntryScene()
+    {
+        SceneManager.LoadScene("Entry");
+    }
+
+
+
+    void UpdateFishingController()
+    {
+        if (SceneManager.GetActiveScene().name != "Pool_Area") return;
+
+        if (PlayerInventory.fishingRod2 > 0)
+        {
+            FishingRodController.Instance.fishingRodSettings = playerInventory.fishingRod2Settings;
+        }
+        else if (PlayerInventory.fishingRod1 > 0)
+        {
+            FishingRodController.Instance.fishingRodSettings = playerInventory.fishingRod1Settings;
+        }
+
+    }
+
+
+
+    void Update()
+    {
+        moneyText.text = money.ToString();
+
+        UpdateFishingController();
     }
 }

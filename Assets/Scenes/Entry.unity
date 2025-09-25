@@ -853,17 +853,12 @@ MonoBehaviour:
   CanvasController: {fileID: 997886863}
   PlayerMovement: {fileID: 0}
   PlayerDirectionController: {fileID: 0}
---- !u!1 &1721826300 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8011064335298959132, guid: bb686952114229e4989312ce8f036d11, type: 3}
-  m_PrefabInstance: {fileID: 1092398518227574420}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1721826301 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3474092761683049482, guid: bb686952114229e4989312ce8f036d11, type: 3}
   m_PrefabInstance: {fileID: 1092398518227574420}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721826300}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c085a1739e9adb1448663dbf9c0859ac, type: 3}
@@ -874,43 +869,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8624263435623081902, guid: bb686952114229e4989312ce8f036d11, type: 3}
   m_PrefabInstance: {fileID: 1092398518227574420}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721826300}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b613d21388892748a3c0568ba284d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1721826306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721826300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697863b37bb86394c8124587634f5390, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovement: {fileID: 1721826303}
-  playerDirectionController: {fileID: 1721826301}
-  playerInventory: {fileID: 1721826310}
-  moneyText: {fileID: 754776468}
---- !u!114 &1721826310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721826300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5942247dd55f85e4faf30f0143c36e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  energyDrinks: 0
-  fishingRod1: 0
-  fishingRod2: 0
 --- !u!114 &1855435878 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6712667745763792542, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
@@ -1026,7 +990,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_Sprite: {fileID: 2325007833892719787, guid: ee49846d4fce3234080b8caa1b3b1369, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1066,14 +1030,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 353555451035331265, guid: bb686952114229e4989312ce8f036d11, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1570096444473318583, guid: bb686952114229e4989312ce8f036d11, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 523366478338891156, guid: bb686952114229e4989312ce8f036d11, type: 3}
+      propertyPath: fishingRod1Settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 5785a46e013e77145943488c197d9bc5, type: 2}
+    - target: {fileID: 523366478338891156, guid: bb686952114229e4989312ce8f036d11, type: 3}
+      propertyPath: fishingRod2Settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f22cfb18e76fbd49a31cb8ec9086e0c, type: 2}
     - target: {fileID: 4827526013905050912, guid: bb686952114229e4989312ce8f036d11, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.17
@@ -1114,24 +1078,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5180726285187491785, guid: bb686952114229e4989312ce8f036d11, type: 3}
+      propertyPath: moneyText
+      value: 
+      objectReference: {fileID: 754776468}
     - target: {fileID: 8011064335298959132, guid: bb686952114229e4989312ce8f036d11, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8011064335298959132, guid: bb686952114229e4989312ce8f036d11, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8011064335298959132, guid: bb686952114229e4989312ce8f036d11, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1721826306}
-    - targetCorrespondingSourceObject: {fileID: 8011064335298959132, guid: bb686952114229e4989312ce8f036d11, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1721826310}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb686952114229e4989312ce8f036d11, type: 3}
 --- !u!1001 &6123470616220202580
 PrefabInstance:

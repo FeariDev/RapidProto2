@@ -50,6 +50,8 @@ public class FishingRodController : Singleton<FishingRodController>
     public Transform lureObj;
     public LineRenderer lineRenderer;
     public Transform lineStartPos;
+    public Transform lineStartPos1;
+    public Transform lineStartPos2;
     public Transform lineEndPos;
 
     public float reelingTapEase = 0.3f;
@@ -322,13 +324,20 @@ public class FishingRodController : Singleton<FishingRodController>
 
     void Start()
     {
-        lineRenderer.SetPosition(0, lineStartPos.position);
+        if(fishingRodSettings.id == 0) lineRenderer.SetPosition(0, lineStartPos.position);
+        else if(fishingRodSettings.id == 1) lineRenderer.SetPosition(0, lineStartPos1.position);
+        else if(fishingRodSettings.id == 2) lineRenderer.SetPosition(0, lineStartPos2.position);
         lineRenderer.SetPosition(1, lineEndPos.position);
     }
 
     void Update()
     {
         UpdateFishingRodSprite();
+
+        if(fishingRodSettings.id == 0) lineRenderer.SetPosition(0, lineStartPos.position);
+        else if(fishingRodSettings.id == 1) lineRenderer.SetPosition(0, lineStartPos1.position);
+        else if(fishingRodSettings.id == 2) lineRenderer.SetPosition(0, lineStartPos2.position);
+
         CameraFollow();
 
         if (Input.GetKey(KeyCode.R))

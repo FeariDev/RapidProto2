@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public int energyDrinks;
-    public int fishingRod1;
-    public int fishingRod2;
+    public BaseFishingRodSO fishingRod1Settings;
+    public BaseFishingRodSO fishingRod2Settings;
+    public static int energyDrinks;
+    public static int fishingRod1;
+    public static int fishingRod2;
 
     public enum Items
     {

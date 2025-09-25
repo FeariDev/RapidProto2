@@ -26,20 +26,20 @@ public class ShopController : MonoBehaviour
 
     void BuyItem(ShopItem item)
     {
-        if (Player.Instance.money >= item.price)
+        if (Player.money >= item.price)
         {
             Player.Instance.ChangeMoney(-item.price);
             Debug.Log("Bought: " + item.itemName);
             PlayerInventory inventory = Player.Instance.playerInventory;
-            if (item.itemName == "EnergyDrink1")
+            if (item.itemName == "Small Energy Drink")
             {
                 inventory.AddItem(PlayerInventory.Items.EnergyDrink1, 1);
             }
-            else if (item.itemName == "FishingRod1")
+            else if (item.itemName == "Strong Rod")
             {
                 inventory.AddItem(PlayerInventory.Items.FishingRod1, 1);
             }
-            else if (item.itemName == "FishingRod2")
+            else if (item.itemName == "Automatic Rod")
             {
                 inventory.AddItem(PlayerInventory.Items.FishingRod2, 1);
             }

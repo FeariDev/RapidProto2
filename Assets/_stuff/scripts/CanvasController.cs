@@ -14,7 +14,7 @@ public class CanvasController : MonoBehaviour
     { 
         if (Player.Instance != null)
         {
-            MoneyText.text = Player.Instance.money.ToString() ;
+            MoneyText.text = Player.money.ToString() ;
         }
     }
 
