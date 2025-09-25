@@ -895,7 +895,7 @@ MonoBehaviour:
   playerMovement: {fileID: 1721826303}
   playerDirectionController: {fileID: 1721826301}
   playerInventory: {fileID: 1721826310}
-  moneyText: {fileID: 0}
+  moneyText: {fileID: 754776468}
 --- !u!114 &1721826310
 MonoBehaviour:
   m_ObjectHideFlags: 0

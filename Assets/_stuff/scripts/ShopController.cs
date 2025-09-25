@@ -30,7 +30,19 @@ public class ShopController : MonoBehaviour
         {
             Player.Instance.ChangeMoney(-item.price);
             Debug.Log("Bought: " + item.itemName);
-            PlayerInventory.Items inventoryItem;
+            PlayerInventory inventory = Player.Instance.playerInventory;
+            if (item.itemName == "EnergyDrink1")
+            {
+                inventory.AddItem(PlayerInventory.Items.EnergyDrink1, 1);
+            }
+            else if (item.itemName == "FishingRod1")
+            {
+                inventory.AddItem(PlayerInventory.Items.FishingRod1, 1);
+            }
+            else if (item.itemName == "FishingRod2")
+            {
+                inventory.AddItem(PlayerInventory.Items.FishingRod2, 1);
+            }
             // Disable after buying
             item.buyButton.interactable = false;
         }

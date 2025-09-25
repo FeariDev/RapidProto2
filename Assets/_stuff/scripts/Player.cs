@@ -27,4 +27,9 @@ public class Player : Singleton<Player>
         playerMovement.enabled = enabled;
         playerDirectionController.enabled = enabled;
     }
+    [Button("Add Money")]
+    void AddMoney()
+    {
+        ChangeMoney(10);
+    }
 }
