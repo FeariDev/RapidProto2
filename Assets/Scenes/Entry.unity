@@ -894,8 +894,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1721826303}
   playerDirectionController: {fileID: 1721826301}
-  playerInventory: {fileID: 0}
+  playerInventory: {fileID: 1721826310}
   moneyText: {fileID: 0}
+--- !u!114 &1721826310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721826300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5942247dd55f85e4faf30f0143c36e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyDrinks: 0
+  fishingRod1: 0
+  fishingRod2: 0
 --- !u!114 &1855435878 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6712667745763792542, guid: 0ddf355d3ddf8224495751145e096576, type: 3}
@@ -1114,6 +1129,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8011064335298959132, guid: bb686952114229e4989312ce8f036d11, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1721826306}
+    - targetCorrespondingSourceObject: {fileID: 8011064335298959132, guid: bb686952114229e4989312ce8f036d11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1721826310}
   m_SourcePrefab: {fileID: 100100000, guid: bb686952114229e4989312ce8f036d11, type: 3}
 --- !u!1001 &6123470616220202580
 PrefabInstance:

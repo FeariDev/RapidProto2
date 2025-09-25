@@ -30,7 +30,7 @@ public class ShopController : MonoBehaviour
         {
             Player.Instance.ChangeMoney(-item.price);
             Debug.Log("Bought: " + item.itemName);
-
+            PlayerInventory.Items inventoryItem;
             // Disable after buying
             item.buyButton.interactable = false;
         }
