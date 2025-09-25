@@ -8,9 +8,12 @@ public class LoadingManager : MonoBehaviour
     public Image progressBar;
     public TextMeshProUGUI progressText;
 
+    public bool LoadToPoolArea = true;
     private void Start()
     {
-        PlayerPrefs.SetString("SceneToLoad", "Pool_Area");
+        if(LoadToPoolArea) PlayerPrefs.SetString("SceneToLoad", "Pool_Area");
+        else PlayerPrefs.SetString("SceneToLoad", "Entry");
+
         StartCoroutine(LoadAsyncOperation());
     }
 
