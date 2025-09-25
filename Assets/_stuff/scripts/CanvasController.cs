@@ -1,4 +1,3 @@
-using UnityEditorInternal;
 using UnityEngine;
 using TMPro;
 public class CanvasController : MonoBehaviour
