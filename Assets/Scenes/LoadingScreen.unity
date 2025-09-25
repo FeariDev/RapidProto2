@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBar: {fileID: 1611763318}
   progressText: {fileID: 1425398488}
+  LoadToPoolArea: 0
 --- !u!1 &961170764
 GameObject:
   m_ObjectHideFlags: 0

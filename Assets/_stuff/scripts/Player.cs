@@ -32,14 +32,19 @@ public class Player : Singleton<Player>
         ChangeMoney(10);
     }
     [Button("Load Pool")]
-    void LoadPoolScene()
+    public void LoadPoolScene()
     {
         SceneManager.LoadScene("Pool_Area");
     }
     [Button("Load Entry")]
-    void LoadEntryScene()
+    public void LoadEntryScene()
     {
         SceneManager.LoadScene("Entry");
+    }
+    [Button("Load Menu")]
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 
